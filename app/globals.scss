@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background-color: hsl(235, 21%, 11%);
+  font-family: "Josefin Sans", sans-serif !important;
+  overflow-y: hidden;
+  /* background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb)); */
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+
+.main {
+  .text {
+    color: hsl(234, 39%, 85%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+    align-items: center;
+    font-size: 35px;
+    font-weight: 800;
+
+    h1 {
+      letter-spacing: 30px;
+    }
+
+    svg {
+      cursor: pointer;
+    }
+  }
+}
+
+
+.container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+
+  .create {
+    // background-color: hsl(235, 24%, 19%);
+    // box-shadow: 1px 3px 7px 0px hsl(235, 24%, 19%);
+
+    [type="checkbox"] {
+      outline: none;
+      border-radius: 50%;
+      padding: 13px;
+      margin: 10px;
+      background-color: transparent;
+      /* margin-right: 25px; */
+      border: 1px solid hsl(234, 39%, 85%);
+
+      &:checked {
+        --tw-ring-color: transparent;
+        // background-image: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+      }
+    }
+
+    [type="text"] {
+      border: none;
+      outline: none;
+      // background-color: hsl(235, 24%, 19%);
+      width: 100%;
+
+      &:focus {
+        border: none !important;
+        outline: none !important;
+        --tw-ring-color: transparent;
+      }
+    }
+  }
+
+  .todos {
+    width: 100%;
+    margin-top: 25px;
+    padding: 15px 0;
+    @extend .create;
+  }
+
+
+}
+
+.unactive {
+  color: white !important;
+}
