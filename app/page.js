@@ -93,7 +93,7 @@ export default function Home() {
         <img className="w-full relative" src={dark === "dark" ? image1.src : image2.src} alt="image" />
         <div className="text">
           <h1 className="select-none">TODO</h1>
-          dark === "light" ? (
+          {dark === "light" ? (
             <MdDarkMode onClick={() => {
               if (dark === "dark") {
                 setDark("light")
@@ -111,6 +111,8 @@ export default function Home() {
               }
               console.log(dark)
             }} />
+          )
+        }
         </div>
       </div>
       <div className="window w-full h-screen" style={dark === "dark" ? { backgroundColor: " hsl(235, 21%, 11%)" } : { backgroundColor: "white" }}>
