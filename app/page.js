@@ -13,10 +13,7 @@ export default function Home() {
   // let n = useContext(darkmoe)
 
 
-  useEffect(() => {
-    localStorage.setItem("mode", "dark")
 
-  }, [])
 
   const [name, setName] = useState("all")
   let select = useSelector((state) => state.todo);
