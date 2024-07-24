@@ -106,13 +106,11 @@ export default function Home() {
             <MdOutlineWbSunny onClick={() => {
               if (dark === "dark") {
                 setDark("light")
-          
               } else {
                 setDark("dark")
               }
               console.log(dark)
-            } />
-          )}
+            }} />
         </div>
       </div>
       <div className="window w-full h-screen" style={dark === "dark" ? { backgroundColor: " hsl(235, 21%, 11%)" } : { backgroundColor: "white" }}>
