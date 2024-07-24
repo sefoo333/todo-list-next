@@ -63,18 +63,6 @@ body {
   align-items: center;
   width: 500px;
 }
-.container .create [type=checkbox], .container .todos [type=checkbox] {
-  outline: none;
-  border-radius: 50%;
-  padding: 13px;
-  margin: 10px;
-  background-color: transparent;
-  /* margin-right: 25px; */
-  border: 1px solid hsl(234, 39%, 85%);
-}
-.container .create [type=checkbox]:checked, .container .todos [type=checkbox]:checked {
-  --tw-ring-color: transparent;
-}
 .container .create [type=text], .container .todos [type=text] {
   border: none;
   outline: none;
@@ -93,4 +81,66 @@ body {
 
 .unactive {
   color: white !important;
+}
+
+.ch_h {
+  background-color: rgb(37, 39, 60);
+  color: black;
+  position: relative;
+  padding: 10px;
+}
+.ch_h [type=checkbox] {
+  position: absolute;
+  background-color: rgb(37, 39, 60);
+  opacity: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9;
+  cursor: pointer;
+}
+.ch_h [type=checkbox]:checked ~ .chh {
+  background-image: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+.ch_h [type=checkbox]:checked ~ .chh svg {
+  display: flex;
+}
+.ch_h .chh {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.ch_h .chh svg {
+  position: absolute;
+  font-size: 15px;
+  display: none;
+}
+
+.count_out {
+  color: white;
+  margin-top: 30px;
+  padding: 15px 25px;
+  background-color: #25273c;
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .container {
+    width: 300px;
+  }
+  .text {
+    width: 315px !important;
+    font-size: 20px !important;
+  }
+  .count {
+    display: none;
+  }
+  .count_out {
+    display: flex;
+  }
 }/*# sourceMappingURL=globals.css.map */
