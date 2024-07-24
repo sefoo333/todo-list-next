@@ -109,10 +109,9 @@ export default function Home() {
           
               } else {
                 setDark("dark")
-            
               }
               console.log(dark)
-            }} />
+            } />
           )}
         </div>
       </div>
